@@ -49,14 +49,15 @@ from keras.layers import Dense , Flatten , Conv2D , MaxPooling2D # ,Dropout
 input_size = trainx_2D.shape[1:]
 
 model = Sequential()
-model.add(Conv2D(32, kernel_size=(3, 3),
+model.add(Conv2D(64, kernel_size=(3, 3),
                  activation='relu', #border_mode="same", 
                  input_shape=input_size))
 model.add(Conv2D(64 , kernel_size = (5 , 5) , activation = 'relu'))
-model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(MaxPooling2D(pool_size=(4, 4)))
 model.add(Flatten())
-model.add(Dense(128 , activation = 'relu'))
+model.add(Dense(64 , activation = 'relu'))
 #model.add(Dropout(0.5))
+model.add(Dense(64 , activation = 'relu'))
 model.add(Dense(28 , activation = 'softmax'))
 
 model.compile(loss='categorical_crossentropy',

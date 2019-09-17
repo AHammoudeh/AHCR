@@ -1,1 +1,1 @@
-# AHCR
+# Arabic Hand Charachter Recognition
